@@ -3,31 +3,77 @@ import Comment from "./Comment";
 import PropTypes from "prop-types";
 import "./comment.css";
 
-const CommentSection = props => {
-  // console.log(props);
-  const postComments = props.comments.map((comment, index) => {
+class CommentSection extends React.Component {
+  // mapping over comments of the post array
+  constructor(props){
+    super(props)
+    this.state = {
+      comments: props.comments,
+      commentInput: ''
+    }
+  }
+  
+  addNewComment = (e) => {
+    e.preventDefault();
+    console.log(e)
+    const newComments = {
+      comments: [
+        ...this.state.comments,
+        {
+          username: "default",
+          text: this.state.commentInput,
+        }
+      ], 
+      commentInput: ''
+    }
+    this.setState(
+      newComments
+    )
+
+  }
+
+  handleChange = e => {
+    const {name, value} = e.target
+    
+    this.setState({
+      [name]: value
+    })
+
+    console.log(this.state.commentInput)
+
+  }
+  
+  render() {
+    const postComments = this.state.comments.map((comment, index) => {
+      return (
+        <div>
+          <Comment key={index} text={comment.text} username={comment.username} />
+        </div>
+      );
+    });
+
     return (
       <div>
-        <Comment key={index} text={comment.text} username={comment.username} />
+        <div className="comment-container">{postComments}</div>
+        <div className="comment-input-container">
+          <form onSubmit={this.addNewComment}>
+            <input
+              type="text"
+              placeholder="Add a comment..."
+              className="comment-input"
+              name="commentInput"
+              value={this.state.commentInput}
+              onChange={this.handleChange}
+            />
+          </form>
+          <span className="ellipsis">
+            <i class="fas fa-ellipsis-v" />
+          </span>
+        </div>
       </div>
     );
-  });
-
-  return (
-    <div>
-      <div className="comment-container">{postComments}</div>
-      <div className="comment-input-container">
-        <input
-          type="text"
-          placeholder="Add a comment..."
-          className="comment-input"
-        />
-        <span className="ellipsis">
-          <i class="fas fa-ellipsis-v" />
-        </span>
-      </div>
-    </div>
-  );
+  }
+  
 };
 
 CommentSection.propTypes = {

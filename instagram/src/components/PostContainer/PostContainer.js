@@ -5,6 +5,8 @@ import PropTypes from "prop-types";
 import "./posts.css";
 
 const PostContainer = props => {
+  //mapping over the post data, sending the whole post to the Post component 
+  // sending comments to the Comment Section component
   const post = props.postData.map(post => {
     return (
       <div key={post.timestamp} className="post-container">
