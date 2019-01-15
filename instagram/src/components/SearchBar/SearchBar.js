@@ -9,7 +9,14 @@ const SearchBar = props => {
         <i class="fab fa-instagram" />
       </span>
       <img src={instaLogo} className="instagram-font-logo" />
-      <input className="searchbar-input" type="text" placeholder="Search" />
+      <input
+        className="searchbar-input"
+        type="text"
+        placeholder="Search"
+        value={props.searchInput}
+        name="searchInput"
+        onChange={props.handleChange}
+      />
       <span className="searchbar-symbol">
         <i class="far fa-compass" />
       </span>

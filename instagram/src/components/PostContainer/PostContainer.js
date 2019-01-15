@@ -10,13 +10,31 @@ const PostContainer = props => {
   const post = props.postData.map(post => {
     return (
       <div key={post.timestamp} className="post-container">
-        <Post post={post} />
-        <CommentSection comments={post.comments} />
+        <Post addLikes={props.addLikes} post={post} />
+        <CommentSection  comments={post.comments} />
       </div>
     );
   });
 
-  return <Fragment>{post}</Fragment>;
+  const searchedPosts = props.postData
+    .filter(post => {
+      return post.username
+        .toLowerCase()
+        .includes(props.searchInput.toLowerCase());
+    })
+    .map(post => {
+       return (
+        <div key={post.timestamp} className="post-container">
+          <Post addLikes={props.addLikes} post={post} />
+          <CommentSection comments={post.comments} />
+        </div>)
+    });
+
+  
+
+
+
+  return <Fragment>{props.searchInput !== "" || null ? searchedPosts : post}</Fragment>;
 };
 
 PostContainer.propTypes = {

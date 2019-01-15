@@ -38,3 +38,11 @@
 .symbol-item {
   margin-right: 2%;
 }
+
+.symbol-item.like {
+  cursor: pointer;
+}
+
+.symbol-item.like:active {
+  color: gray;
+}

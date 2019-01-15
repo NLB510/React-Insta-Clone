@@ -12,7 +12,7 @@ const Post = props => {
       <img src={post.imageUrl} alt={`${post.username}`} className="post-image" />
       <div className="post-middle-container">
         <div className="symbols">
-        <span className="symbol-item"><i className="far fa-heart" /></span>
+        <span onClick={() => props.addLikes(post.timestamp)} className="symbol-item like"><i className="far fa-heart" /></span>
         <span><i className="far fa-comment"></i></span>
         </div>
         <h4>{post.likes} likes</h4>
