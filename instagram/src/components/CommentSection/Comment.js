@@ -1,11 +1,22 @@
-import React, {Fragment} from "react"
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
 
 const Comment = props => {
-  return <Fragment>
+  // console.log(props)
+  const {username, text} = props
+
+  return (
+    <Fragment>
       <p>
-        <strong>{props.username}</strong> {props.text}
+        <strong>{username}</strong> {text}
       </p>
-    </Fragment>;
+    </Fragment>
+  );
+};
+
+Comment.propTypes = {
+  text: PropTypes.string,
+  username: PropTypes.string
 }
 
 export default Comment;
