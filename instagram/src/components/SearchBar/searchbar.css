@@ -1,0 +1,10 @@
+.searchbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchbar-item.input {
+  width: 30%;
+  height: 20px;
+}
