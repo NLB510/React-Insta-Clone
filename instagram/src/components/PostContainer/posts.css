@@ -1,0 +1,40 @@
+.post-container {
+  border: 1px solid lightgray;
+  margin: 4% auto;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.post-header {
+  display: flex;
+  width: 23%;
+  padding: 0.5% 0 0.5% 2%;
+  align-items: center;
+  
+}
+
+.thumbnail-image {
+  border-radius: 100px;
+  width: 40px;
+  height: 40px;
+  margin-right: 10%;
+}
+
+.post-image {
+  width: 100%;
+}
+
+.post-middle-container {
+  padding: 1% 0 0 2%;
+}
+
+.symbols {
+  display: flex;
+  margin-bottom: -15px;
+  font-size: 1.6rem;
+  
+}
+
+.symbol-item {
+  margin-right: 2%;
+}

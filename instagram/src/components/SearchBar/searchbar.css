@@ -2,9 +2,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 2%;
 }
 
-.searchbar-item.input {
-  width: 30%;
+.searchbar-input {
+  width: 35%;
   height: 20px;
+}
+
+.instagram-logo {
+  font-size: 1.5rem;
+  padding-bottom: 0.5%;
+}
+
+
+.instagram-font-logo {
+  width: 15%;
+  border-left: 1px solid black;
+  padding-left: 3%;
+}
+
+.searchbar-symbol {
+  font-size: 1.4rem;
 }

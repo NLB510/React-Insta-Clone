@@ -1,19 +1,20 @@
-import React from "react";
+import React, { Fragment } from "react";
 import CommentSection from "../CommentSection/CommentSection";
 import Post from "./Post";
 import PropTypes from "prop-types";
+import "./posts.css";
 
 const PostContainer = props => {
   const post = props.postData.map(post => {
     return (
-      <div key={post.timestamp}>
+      <div key={post.timestamp} className="post-container">
         <Post post={post} />
         <CommentSection comments={post.comments} />
       </div>
     );
   });
 
-  return <div>{post}</div>;
+  return <Fragment>{post}</Fragment>;
 };
 
 PostContainer.propTypes = {

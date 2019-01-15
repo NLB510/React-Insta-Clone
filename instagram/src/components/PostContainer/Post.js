@@ -4,16 +4,20 @@ import PropTypes from "prop-types";
 const Post = props => {
   const { post } = props;
   // console.log(post);
-  return (
-    <div>
-      <img src={post.thumbnailUrl} alt="" />
-      <h2>{post.username}</h2>
-      <img src={post.imageUrl} alt="" />
-      <h4>heart symbol</h4>
-      <h4>comment symbol</h4>
-      <h4>{post.likes} likes</h4>
-    </div>
-  );
+  return <div>
+      <div className="post-header">
+        <img src={post.thumbnailUrl} alt={`${post.username}'s thumbnail`} className="thumbnail-image" />
+        <h3>{post.username}</h3>
+      </div>
+      <img src={post.imageUrl} alt={`${post.username}`} className="post-image" />
+      <div className="post-middle-container">
+        <div className="symbols">
+        <span className="symbol-item"><i className="far fa-heart" /></span>
+        <span><i className="far fa-comment"></i></span>
+        </div>
+        <h4>{post.likes} likes</h4>
+      </div>
+    </div>;
 };
 
 Post.propTypes = {

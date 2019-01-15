@@ -1,0 +1,29 @@
+.comment-container {
+  padding: 1% 0 0 2%;
+}
+
+.comment-input-container {
+  border-top: 1px solid lightgrey;
+  width: 96%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+
+.comment-input {
+  width: 80%;
+  border: none;
+  height: 50px;
+  padding: 1% 0;
+  
+  font-size: 1.0rem;
+}
+
+
+.ellipsis {
+  transform: rotate(90deg);
+  margin-right: 1.5%;
+  font-size: 1.1rem;
+}
