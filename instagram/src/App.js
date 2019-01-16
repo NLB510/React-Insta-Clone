@@ -1,31 +1,62 @@
 import React, { Component } from "react";
-import PostPage from "./components/PostContainer/PostPage"
-import authenticate from "./components/authentication/authenticate"
+import postData from "./dummy-data";
+import PostContainer from "./components/PostContainer/PostContainer";
+import SearchBar from "./components/SearchBar/SearchBar";
+
 import "./App.css";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      
+      postData: [],
+      searchInput: '',
     };
-
-    // console.log('App js constructor')
   }
 
-  
+  componentDidMount() {
+    this.setState({
+      postData: postData
+    })
+  }
+
+  addLikes = (timestamp) => {
+    console.log("click fired")
+    // if post id matches update state of this post
+    const updatedLikes = this.state.postData.map(post => {
+      if(post.timestamp === timestamp) {
+        post.likes = post.likes + 1
+      }
+      return post
+    })
+
+    this.setState({
+      postData: updatedLikes
+    })
+
+  }
+
+  handleChange = e => {
+    const { name, value } = e.target
+
+    this.setState({
+      [name]: value
+    })
+
+    console.log(this.state.commentInput)
+
+  }
+
 
   render() {
-    // console.log('App js render')
+    console.log(this.state.postData)
     return (
       <div className="App">
-        
-        <PostPage />
+        <SearchBar searchInput={this.state.searchInput} handleChange={this.handleChange} />
+        <PostContainer  addLikes={this.addLikes} postData={this.state.postData} searchInput={this.state.searchInput} />
       </div>
     );
   }
 }
-
-const InstaApp = authenticate(App);
 
 export default App;

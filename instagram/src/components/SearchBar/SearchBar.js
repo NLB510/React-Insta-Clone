@@ -6,7 +6,7 @@ const SearchBar = props => {
   return (
     <div className="searchbar-container">
       <span className="instagram-logo">
-        <i className="fab fa-instagram" />
+        <i class="fab fa-instagram" />
       </span>
       <img src={instaLogo} className="instagram-font-logo" />
       <input
@@ -18,13 +18,13 @@ const SearchBar = props => {
         onChange={props.handleChange}
       />
       <span className="searchbar-symbol">
-        <i className="far fa-compass" />
+        <i class="far fa-compass" />
       </span>
       <span className="searchbar-symbol">
         <i className="far fa-heart" />
       </span>
       <span className="searchbar-symbol">
-        <i className="far fa-user" />
+        <i class="far fa-user" />
       </span>
     </div>
   );
