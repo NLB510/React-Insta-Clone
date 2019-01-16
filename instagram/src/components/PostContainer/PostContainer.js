@@ -16,9 +16,6 @@ const PostContainer = props => {
     );
   });
 
-  // Handles Search for the search bar
-  // filters over post data based on search input text then maps over filtered array and 
-  // returns the Post and Comment Section components of the matching searched posts
   const searchedPosts = props.postData
     .filter(post => {
       return post.username
@@ -36,7 +33,11 @@ const PostContainer = props => {
   
 
 
+<<<<<<< HEAD
     // conditional to return searchedPosts if the search input isn't null or original data.
+=======
+
+>>>>>>> dbfd5b5a0f70b6c2deaeea0e732760bf1153227f
   return <Fragment>{props.searchInput !== "" || null ? searchedPosts : post}</Fragment>;
 };
 
