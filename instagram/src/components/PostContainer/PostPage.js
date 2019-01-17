@@ -72,13 +72,21 @@ class PostPage extends Component {
     // console.log(this.state.commentInput);
   };
 
+  handleLogout = e => {
+    localStorage.setItem("username", '');
+    localStorage.setItem("loginStatus", 'false');
+
+    window.location.reload();
+  }
+
   render() {
-    // console.log('App js render')
+    
     return (
       <Fragment>
         <SearchBar
           searchInput={this.state.searchInput}
           handleChange={this.handleChange}
+          logout={this.handleLogout}
         />
         <PostContainer
           addLikes={this.addLikes}

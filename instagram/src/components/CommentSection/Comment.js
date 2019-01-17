@@ -2,9 +2,9 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 
 const Comment = props => {
-  // console.log(props)
-  const { username, text } = props;
-
+  console.log(props)
+  const { username, text, index} = props;
+  console.log(index)
   return (
     <Fragment>
       <p>

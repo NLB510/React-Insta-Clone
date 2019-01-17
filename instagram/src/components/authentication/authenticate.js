@@ -13,28 +13,18 @@ const authenticate = App => LoginPage =>
     }
 
     componentDidMount() {
-      
-      
-
-      
-
       const username = localStorage.getItem("username");
 
       if (username) {
         this.setState({
           loggedIn: true
-        })
+        });
       } else {
         this.setState({
           loggedIn: false
-        })
+        });
       }
 
-
-      // this.setState({
-      //   loggedIn: loginStatus
-      // });
-      // console.log(localStorage.getItem("loginStatus"));
     }
 
     handleChange = e => {
@@ -46,9 +36,6 @@ const authenticate = App => LoginPage =>
     };
 
     toggleLogin = e => {
-      // this.setState(prevState => ({
-      //   loggedIn: !prevState.loggedIn
-      // }));
 
       localStorage.setItem("username", `${this.state.usernameInput}`);
       localStorage.setItem("loginStatus", JSON.stringify(this.state.loggedIn));
@@ -57,9 +44,6 @@ const authenticate = App => LoginPage =>
     };
 
     render() {
-      
-
-      
       console.log(window.localStorage);
       console.log(localStorage.getItem("loginStatus"));
       // console.log(localStorage.getItem("username"));

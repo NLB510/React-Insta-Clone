@@ -26,6 +26,7 @@ const SearchBar = props => {
       <span className="searchbar-symbol">
         <i class="far fa-user" />
       </span>
+      <button onClick={props.logout} >Logout</button>
     </div>
   );
 };

@@ -20,7 +20,7 @@ class CommentSection extends React.Component {
       comments: [
         ...this.state.comments,
         {
-          username: "default",
+          username: localStorage.getItem('username'),
           text: this.state.commentInput,
         }
       ], 
@@ -45,7 +45,7 @@ class CommentSection extends React.Component {
     const postComments = this.state.comments.map((comment, index) => {
       return (
         <div>
-          <Comment key={index} text={comment.text} username={comment.username} />
+          <Comment key={index} index={index} text={comment.text} username={comment.username} />
         </div>
       );
     });
