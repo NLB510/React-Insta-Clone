@@ -72,6 +72,8 @@ class PostPage extends Component {
     // console.log(this.state.commentInput);
   };
 
+  // Resets the username and login status on local storage when the logout is clicked
+  // reloads page and user is sent back to login page
   handleLogout = e => {
     localStorage.setItem("username", '');
     localStorage.setItem("loginStatus", 'false');

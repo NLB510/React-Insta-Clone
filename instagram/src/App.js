@@ -16,12 +16,12 @@ class App extends Component {
     
     return (
       <div className="App">
-        <PostPage />
+        <ConditionalView />
       </div>
     );
   }
 }
 
-// const Authenticate = authenticate;
+const ConditionalView = authenticate(PostPage)(Login);
 
-export default authenticate(App)(Login);
+export default App;

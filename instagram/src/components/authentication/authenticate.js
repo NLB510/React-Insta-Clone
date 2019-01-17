@@ -13,8 +13,11 @@ const authenticate = App => LoginPage =>
     }
 
     componentDidMount() {
+  
+      
       const username = localStorage.getItem("username");
 
+      // checks if a username is saved to localStorage, change login status on state if true
       if (username) {
         this.setState({
           loggedIn: true
@@ -35,19 +38,19 @@ const authenticate = App => LoginPage =>
       });
     };
 
+    // saves the username and login status to local storage when the login button is clicked
     toggleLogin = e => {
 
       localStorage.setItem("username", `${this.state.usernameInput}`);
       localStorage.setItem("loginStatus", JSON.stringify(this.state.loggedIn));
 
-      console.log("login fired");
+      
     };
 
     render() {
-      console.log(window.localStorage);
-      console.log(localStorage.getItem("loginStatus"));
-      // console.log(localStorage.getItem("username"));
+      
 
+      // Checks login status and loads app if logged in or the login page if now
       return this.state.loggedIn ? (
         <App />
       ) : (
