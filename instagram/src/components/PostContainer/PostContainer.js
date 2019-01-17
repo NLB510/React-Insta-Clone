@@ -2,17 +2,25 @@ import React, { Fragment } from "react";
 import CommentSection from "../CommentSection/CommentSection";
 import Post from "./Post";
 import PropTypes from "prop-types";
-import "./posts.css";
+
+import styled from "styled-components";
+
+const PostPageContainer = styled.div`
+  border: 1px solid lightgray;
+  margin: 4% auto;
+  width: 100%;
+  border-radius: 4px;
+`;
 
 const PostContainer = props => {
-  //mapping over the post data, sending the whole post to the Post component 
+  //mapping over the post data, sending the whole post to the Post component
   // sending comments to the Comment Section component
   const post = props.postData.map(post => {
     return (
-      <div key={post.timestamp} className="post-container">
+      <PostPageContainer key={post.timestamp}>
         <Post addLikes={props.addLikes} post={post} />
-        <CommentSection  comments={post.comments} />
-      </div>
+        <CommentSection comments={post.comments} />
+      </PostPageContainer>
     );
   });
 
@@ -23,18 +31,20 @@ const PostContainer = props => {
         .includes(props.searchInput.toLowerCase());
     })
     .map(post => {
-       return (
-        <div key={post.timestamp} className="post-container">
+      return (
+        <PostPageContainer key={post.timestamp}>
           <Post addLikes={props.addLikes} post={post} />
           <CommentSection comments={post.comments} />
-        </div>)
+        </PostPageContainer>
+      );
     });
 
-  
-
-
-    // conditional to return searchedPosts if the search input isn't null or original data.
-  return <Fragment>{props.searchInput !== "" || null ? searchedPosts : post}</Fragment>;
+  // conditional to return searchedPosts if the search input isn't null or original data.
+  return (
+    <Fragment>
+      {props.searchInput !== "" || null ? searchedPosts : post}
+    </Fragment>
+  );
 };
 
 PostContainer.propTypes = {

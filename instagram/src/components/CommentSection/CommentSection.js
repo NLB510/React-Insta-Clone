@@ -44,8 +44,8 @@ class CommentSection extends React.Component {
   render() {
     const postComments = this.state.comments.map((comment, index) => {
       return (
-        <div>
-          <Comment key={index} index={index} text={comment.text} username={comment.username} />
+        <div key={index}>
+          <Comment index={index} text={comment.text} username={comment.username} />
         </div>
       );
     });
@@ -64,9 +64,6 @@ class CommentSection extends React.Component {
               onChange={this.handleChange}
             />
           </form>
-          <span className="ellipsis">
-            <i class="fas fa-ellipsis-v" />
-          </span>
         </div>
       </div>
     );

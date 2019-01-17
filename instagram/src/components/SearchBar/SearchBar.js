@@ -20,24 +20,26 @@ const SearchSymbol = styled.span`
   font-size: 1.4rem;
 `;
 
-
 const SearchLogoImg = styled.img`
   width: 15%;
   border-left: 1px solid black;
   padding-left: 3%;
 `;
 
-
-
-
-
 const SearchBar = props => {
-  return <SearchContainer>
+  return (
+    <SearchContainer>
       <SearchSymbol>
         <i className="fab fa-instagram" />
       </SearchSymbol>
       <SearchLogoImg src={instaLogo} />
-      <SearchInput type="text" placeholder="Search" value={props.searchInput} name="searchInput" onChange={props.handleChange} />
+      <SearchInput
+        type="text"
+        placeholder="Search"
+        value={props.searchInput}
+        name="searchInput"
+        onChange={props.handleChange}
+      />
       <SearchSymbol>
         <i className="far fa-compass" />
       </SearchSymbol>
@@ -48,7 +50,8 @@ const SearchBar = props => {
         <i className="far fa-user" />
       </SearchSymbol>
       <button onClick={props.logout}>Logout</button>
-    </SearchContainer>;
+    </SearchContainer>
+  );
 };
 
 export default SearchBar;
