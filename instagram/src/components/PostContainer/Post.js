@@ -5,7 +5,7 @@ import PostHeader from "./PostHeader";
 import PostMiddleSection from "./PostMiddleSection";
 
 import styled from "styled-components";
-import "./posts.css";
+
 
 /* 
 ===== POST STYLED COMPONENTS =====

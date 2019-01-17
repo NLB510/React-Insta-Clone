@@ -1,4 +1,4 @@
-.comment-container {
+/* .comment-container {
   padding: 1% 0 0 2%;
 }
 
@@ -9,17 +9,17 @@
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-}
+} */
 
 
-.comment-input {
+/* .comment-input {
   width: 80%;
   border: none;
   height: 50px;
   padding: 1% 0;
   
   font-size: 1.0rem;
-}
+} */
 
 
 /* .ellipsis {
