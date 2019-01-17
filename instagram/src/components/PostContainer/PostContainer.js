@@ -33,11 +33,7 @@ const PostContainer = props => {
   
 
 
-<<<<<<< HEAD
     // conditional to return searchedPosts if the search input isn't null or original data.
-=======
-
->>>>>>> dbfd5b5a0f70b6c2deaeea0e732760bf1153227f
   return <Fragment>{props.searchInput !== "" || null ? searchedPosts : post}</Fragment>;
 };
 
