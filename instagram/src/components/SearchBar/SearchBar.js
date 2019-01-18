@@ -26,6 +26,16 @@ const SearchLogoImg = styled.img`
   padding-left: 3%;
 `;
 
+const LogoutButton = styled.button`
+  padding: 2%;
+  background: #f4f4f4;
+  border-radius: 5px;
+`;
+
+
+
+
+
 const SearchBar = props => {
   return (
     <SearchContainer>
@@ -49,7 +59,7 @@ const SearchBar = props => {
       <SearchSymbol>
         <i className="far fa-user" />
       </SearchSymbol>
-      <button onClick={props.logout}>Logout</button>
+      <LogoutButton onClick={props.logout}>Logout</LogoutButton>
     </SearchContainer>
   );
 };
